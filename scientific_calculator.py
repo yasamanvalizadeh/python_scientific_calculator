@@ -1,8 +1,15 @@
+"""
+author: 'Yasaman Valizadeh'
+-------------------------
+scientific calculator App
+-------------------------
+Python GUI app using tkinter.
+program needs to be run from command line/ terminal.
+"""
+
 import random
 from tkinter import *
 import math
-
-
 
 class Calculator:
     def __init__(self, window):
@@ -157,7 +164,6 @@ class Calculator:
         self.actions_butten=Button(self.root, text='AC', command=self.all_clear , anchor=CENTER, width=4 , bg='black' ,fg='orange' ,  height=1 , font=('times new roman',14)  , relief=FLAT , cursor='hand2')
         self.actions_butten.place(x=15 , y =205)
 
-
         self.empty_entry=True   
         self.current_num = ''
         self.op_press= False
@@ -178,8 +184,6 @@ class Calculator:
             self.current_num = first_number + second_number
         self.display(self.current_num)
 
-
-
     def op_click(self,op):
         
         self.current_num =float(self.disply.get())
@@ -192,7 +196,6 @@ class Calculator:
             self.valid_function()
         self.op_press = True
         self.type_op = op
-
 
     def valid_function(self):
         if self.type_op == "+":
@@ -222,7 +225,6 @@ class Calculator:
         self.disply.get()
         self.disply.delete(len(self.disply.get())-1 , END)
         
-
     def all_clear(self):
         self.empty_entry=True   
         self.current_num = ''
@@ -231,7 +233,6 @@ class Calculator:
         self.total = 0
         self.disply.delete('0', END)
         
-    
     def equal_btn(self):
         self.current_num =float(self.disply.get())
         if self.op_press:
@@ -239,11 +240,9 @@ class Calculator:
         else:
             self.total = float(self.disply.get())
         
-
     def squared(self):
         self.current_num = math.sqrt(float(self.disply.get()))
         self.display(self.current_num)
-
 
     def cos(self):
         self.current_num=math.cos(float(self.disply.get()))
@@ -317,11 +316,9 @@ class Calculator:
         self.current_num = math.pi
         self.display(self.current_num)
 
-
     def degrees(self):
         self.current_num = math.degrees(float(self.disply.get()))
         self.display(self.current_num)
-
 
     def radians(self):
         self.current_num = math.radians(float(self.disply.get()))
@@ -330,7 +327,6 @@ class Calculator:
     def gamma(self):
         self.current_num = math.gamma(float(self.disply.get()))
         self.display(self.current_num)
-
 
     def trunc(self):
         self.current_num = math.trunc(float(self.disply.get()))
